@@ -1,0 +1,1 @@
+alter table user_studies drop column org_id;
