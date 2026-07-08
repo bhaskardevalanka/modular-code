@@ -1,6 +1,6 @@
 
 #docker image for maven 3.9.5 and jkd 21
-FROM nexus.techvedika.com:8083/docker-jenkins/java_mvn:21 AS builder1
+FROM 769126030485.dkr.ecr.us-east-1.amazonaws.com/learning/java_mvn:21 AS builder1
 LABEL org.opencontainers.image.authors="Bhaskar Devalanka"
 
 # Change directory to the project folder
@@ -13,7 +13,7 @@ RUN ./apache-maven/bin/mvn clean package -DskipTests
 
 
 #Final stage
-FROM nexus.techvedika.com:8083/docker-jenkins/java_mvn:21
+FROM 769126030485.dkr.ecr.us-east-1.amazonaws.com/learning/java_mvn:21
 
 
 RUN apt-get update -y && apt-get upgrade libc-bin -y && apt-get upgrade liblzma5 -y && apt-get install zlib1g -y
